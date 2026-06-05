@@ -222,7 +222,7 @@ export default function App() {
     <div className="min-h-screen bg-stone-975 text-stone-100 font-sans flex flex-col selection:bg-cyan-500 selection:text-black">
       
       {/* Top Banner Warning Sandbox Info */}
-      <div className="bg-gradient-to-r from-indigo-950/60 via-stone-900/85 to-indigo-950/60 border-b border-indigo-900/35 px-4 py-2 text-center text-[10px] font-mono tracking-wide text-indigo-300 flex items-center justify-center gap-2">
+      <div className="bg-linear-to-r from-indigo-950/60 via-stone-900/85 to-indigo-950/60 border-b border-indigo-900/35 px-4 py-2 text-center text-[10px] font-mono tracking-wide text-indigo-300 flex items-center justify-center gap-2">
         <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-spin" style={{ animationDuration: '10s' }} />
         <span>LIVE ON SUI TESTNET — POWERED BY TATUM RPC + WALRUS STORAGE</span>
         <span className="hidden sm:inline bg-indigo-500/20 px-2 py-0.5 rounded border border-indigo-500/30 font-bold uppercase text-[9px] text-cyan-200">
@@ -233,7 +233,7 @@ export default function App() {
       {/* Main futuristic Navigation Bar */}
       <header className="sticky top-0 z-30 backdrop-blur-md bg-stone-975 bg-opacity-80 border-b border-stone-900 px-4 sm:px-6 py-3.5 flex flex-col sm:flex-row items-center justify-between gap-3">
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => handleTabChange("landing")}>
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-indigo-600 flex items-center justify-center shadow-lg relative group">
+          <div className="w-10 h-10 rounded-xl bg-linear-to-br from-cyan-400 to-indigo-600 flex items-center justify-center shadow-lg relative group">
             <Lock className="w-5 h-5 text-stone-100 group-hover:scale-110 transition-transform" />
             <div className="absolute inset-0 rounded-xl bg-cyan-400 opacity-20 blur-sm group-hover:opacity-45 transition-opacity" />
           </div>
@@ -342,7 +342,7 @@ export default function App() {
               
               {/* Left Column: Quick launch metrics & core technology stack */}
               <div className="lg:col-span-4 space-y-6 flex flex-col justify-between">
-                <div className="bg-gradient-to-br from-indigo-950/25 via-stone-900/40 to-stone-950/10 p-5 rounded-2xl border border-stone-850/60">
+                <div className="bg-linear-to-br from-indigo-950/25 via-stone-900/40 to-stone-950/10 p-5 rounded-2xl border border-stone-850/60">
                   <h3 className="text-xs uppercase font-mono tracking-wider text-cyan-400 font-bold mb-3">
                     Verified Cryptographic Credentials
                   </h3>

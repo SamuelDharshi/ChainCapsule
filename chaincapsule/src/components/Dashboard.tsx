@@ -176,9 +176,9 @@ export default function Dashboard({
                 key={c.id}
                 className={`border rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 ${
                   isTricked
-                    ? "bg-gradient-to-br from-emerald-950/20 to-stone-950 border-emerald-500/30 ring-1 ring-emerald-500/20"
+                    ? "bg-linear-to-br from-emerald-950/20 to-stone-950 border-emerald-500/30 ring-1 ring-emerald-500/20"
                     : isAlarmWarning
-                    ? "bg-gradient-to-br from-amber-950/20 to-stone-950 border-amber-500/50 shadow-lg"
+                    ? "bg-linear-to-br from-amber-950/20 to-stone-950 border-amber-500/50 shadow-lg"
                     : "bg-stone-950/50 border-stone-800 hover:border-stone-700 hover:bg-stone-950/80"
                 }`}
               >
@@ -252,7 +252,7 @@ export default function Dashboard({
                             isTricked
                               ? "bg-emerald-500"
                               : isAlarmWarning
-                              ? "bg-gradient-to-r from-amber-500 to-rose-500 animate-pulse"
+                              ? "bg-linear-to-r from-amber-500 to-rose-500 animate-pulse"
                               : isTimeMode
                               ? "bg-cyan-500"
                               : "bg-indigo-500"
@@ -280,7 +280,7 @@ export default function Dashboard({
                     <button
                       onClick={() => handleHeartbeatClick(c.id, c.name)}
                       disabled={isThisHeartbeatPending}
-                      className="flex items-center gap-1.5 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-400 hover:to-purple-500 text-white px-3.5 py-1.5 rounded-lg text-xs font-semibold shadow-inner transition-colors disabled:opacity-60"
+                      className="flex items-center gap-1.5 bg-linear-to-r from-indigo-500 to-purple-600 hover:from-indigo-400 hover:to-purple-500 text-white px-3.5 py-1.5 rounded-lg text-xs font-semibold shadow-inner transition-colors disabled:opacity-60"
                     >
                       {isThisHeartbeatPending ? (
                         <RefreshCw className="w-3.5 h-3.5 animate-spin" />

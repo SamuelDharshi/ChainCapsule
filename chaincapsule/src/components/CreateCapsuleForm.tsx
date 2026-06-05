@@ -492,7 +492,7 @@ export default function CreateCapsuleForm({
           <button
             type="submit"
             disabled={isEncrypting || !file || !password || !name}
-            className="w-full bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white font-medium text-xs tracking-wider uppercase py-3 rounded-xl disabled:bg-stone-800 disabled:from-stone-900 disabled:to-stone-900 disabled:text-stone-600 transition-all flex items-center justify-center gap-2"
+            className="w-full bg-linear-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white font-medium text-xs tracking-wider uppercase py-3 rounded-xl disabled:bg-stone-800 disabled:from-stone-900 disabled:to-stone-900 disabled:text-stone-600 transition-all flex items-center justify-center gap-2"
           >
             {isEncrypting ? (
               <>

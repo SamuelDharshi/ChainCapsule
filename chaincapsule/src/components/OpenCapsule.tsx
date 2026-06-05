@@ -292,7 +292,7 @@ export default function OpenCapsule({
                         <span className="text-xs font-bold truncate block">{c.name}</span>
                         <span className="text-[9px] font-mono text-stone-500 block truncate">{c.id}</span>
                       </div>
-                      <div className="flex items-center gap-2 flex-shrink-0">
+                      <div className="flex items-center gap-2 shrink-0">
                         <span className={`text-[8px] font-mono uppercase px-1.5 py-0.5 rounded border ${
                           isUnlockableNow 
                             ? "bg-emerald-950 text-emerald-400 border-emerald-900" 
@@ -351,7 +351,7 @@ export default function OpenCapsule({
 
           {errorText && (
             <div className="p-4 bg-red-950 bg-opacity-30 border border-red-900 text-red-400 text-xs rounded-xl flex items-start gap-2 animate-shake">
-              <ShieldAlert className="w-5 h-5 flex-shrink-0 text-red-500 mt-0.5" />
+              <ShieldAlert className="w-5 h-5 shrink-0 text-red-500 mt-0.5" />
               <div>{errorText}</div>
             </div>
           )}
@@ -415,7 +415,7 @@ export default function OpenCapsule({
           <div className="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto">
             <button
               onClick={handleDownload}
-              className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-stone-100 font-semibold text-xs py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5"
+              className="flex-1 bg-linear-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-stone-100 font-semibold text-xs py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5"
             >
               <Download className="w-4 h-4 text-white" /> Download Plane File
             </button>
