@@ -1,0 +1,6 @@
+{
+  "name": "ChainCapsule",
+  "description": "On-chain Time Capsule & Dead Man's Switch on Sui + Walrus. Encrypt files client-side, host on Walrus, and let Sui unlock keys programmatically.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
