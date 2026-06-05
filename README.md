@@ -44,6 +44,17 @@
 
 ---
 
+## 🌐 Live Demo
+
+| Resource | Link |
+|---|---|
+| 🚀 **Live App** | **[chain-capsule.vercel.app](https://chain-capsule.vercel.app)** |
+| 📦 Smart Contract | [0x94b8cc7c...](https://suiscan.xyz/testnet/object/0x94b8cc7c9a397e11cccb906b313716c0b6acface1631607ccade64561253d8f3) on Sui Testnet |
+| 💻 GitHub | [SamuelDharshi/ChainCapsule](https://github.com/SamuelDharshi/ChainCapsule) |
+
+---
+
+
 ## 💡 The Idea
 
 ### Problem
@@ -653,10 +664,12 @@ public struct Capsule has key, store {
 
 ## 🛠 Tech Stack
 
-| Layer | Technology | Purpose |
-|---|---|---|
-| Blockchain | Sui Testnet | Smart contract execution, time oracle |
-| RPC Gateway | Tatum (`https://sui-mainnet.gateway.tatum.io`) | Reliable Sui JSON-RPC access |
+| Layer | Technology | Resource | Link |
+|---|---|
+| 🌐 **Live App** | **https://chain-capsule.vercel.app** |
+| 📦 Smart Contract | [`0x94b8cc7c...`](https://suiscan.xyz/testnet/object/0x94b8cc7c9a397e11cccb906b313716c0b6acface1631607ccade64561253d8f3) |
+| 💻 GitHub | [SamuelDharshi/ChainCapsule](https://github.com/SamuelDharshi/ChainCapsule) |
+| RPC Gateway | Tatum | Reliable Sui JSON-RPC access |
 | Storage | Walrus Testnet | Decentralized encrypted blob storage |
 | Smart Contract | Move Language | Time-lock logic, heartbeat, unlock |
 | Encryption | Web Crypto API (browser-native) | AES-256-GCM + PBKDF2 |
