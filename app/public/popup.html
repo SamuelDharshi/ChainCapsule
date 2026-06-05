@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChainCapsule</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 320px;
+      background: #0a0a0f;
+      color: #e2e8f0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #0f0f1a 0%, #111122 100%);
+      border-bottom: 1px solid #1e1e35;
+      padding: 14px 16px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #22d3ee, #6366f1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      box-shadow: 0 0 12px rgba(34, 211, 238, 0.3);
+    }
+
+    .header-text h1 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #f1f5f9;
+      letter-spacing: -0.3px;
+    }
+
+    .header-text p {
+      font-size: 10px;
+      color: #22d3ee;
+      font-family: 'Courier New', monospace;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 1px;
+    }
+
+    .version-badge {
+      margin-left: auto;
+      font-size: 9px;
+      color: #64748b;
+      font-family: monospace;
+      background: #1e1e2e;
+      border: 1px solid #2a2a3e;
+      padding: 2px 6px;
+      border-radius: 10px;
+    }
+
+    /* ── Status bar ── */
+    .status-bar {
+      background: #0d0d18;
+      border-bottom: 1px solid #1a1a2e;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      font-family: monospace;
+      color: #64748b;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22d3ee;
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ── Body ── */
+    .body {
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* ── Description ── */
+    .description {
+      font-size: 11.5px;
+      color: #94a3b8;
+      line-height: 1.55;
+      padding: 10px 12px;
+      background: #0f0f1e;
+      border: 1px solid #1e1e35;
+      border-radius: 10px;
+    }
+
+    /* ── Feature pills ── */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .pill {
+      font-size: 9px;
+      font-family: monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 8px;
+      border-radius: 20px;
+      border: 1px solid;
+    }
+    .pill-cyan  { color: #22d3ee; border-color: rgba(34,211,238,0.25); background: rgba(34,211,238,0.08); }
+    .pill-indigo{ color: #818cf8; border-color: rgba(129,140,248,0.25); background: rgba(129,140,248,0.08); }
+    .pill-green { color: #34d399; border-color: rgba(52,211,153,0.25); background: rgba(52,211,153,0.08); }
+    .pill-amber { color: #fbbf24; border-color: rgba(251,191,36,0.25); background: rgba(251,191,36,0.08); }
+
+    /* ── Main CTA button ── */
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 11px 16px;
+      background: linear-gradient(135deg, #4f46e5 0%, #0e7490 100%);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #6366f1 0%, #22d3ee 100%);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(99,102,241,0.4); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary span { position: relative; z-index: 1; }
+    .btn-primary .icon { position: relative; z-index: 1; font-size: 14px; }
+
+    /* ── Quick nav buttons ── */
+    .quick-nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+
+    .btn-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 10px;
+      background: #0f0f1e;
+      border: 1px solid #1e1e35;
+      border-radius: 8px;
+      color: #94a3b8;
+      font-size: 10.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-align: left;
+    }
+
+    .btn-nav:hover {
+      border-color: #22d3ee55;
+      color: #22d3ee;
+      background: rgba(34,211,238,0.05);
+    }
+
+    .btn-nav .nav-icon { font-size: 13px; }
+
+    /* ── Footer ── */
+    .footer {
+      border-top: 1px solid #1a1a2e;
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-link {
+      font-size: 9.5px;
+      color: #475569;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: monospace;
+      transition: color 0.15s;
+    }
+
+    .footer-link:hover { color: #22d3ee; }
+
+    .network-badge {
+      font-size: 9px;
+      font-family: monospace;
+      color: #22d3ee;
+      background: rgba(34,211,238,0.08);
+      border: 1px solid rgba(34,211,238,0.2);
+      padding: 2px 7px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">🔒</div>
+    <div class="header-text">
+      <h1>ChainCapsule</h1>
+      <p>Walrus + Sui Protocol</p>
+    </div>
+    <span class="version-badge">v1.1.0</span>
+  </div>
+
+  <!-- Status bar -->
+  <div class="status-bar">
+    <div class="status-dot"></div>
+    <span id="status-text">LIVE ON SUI TESTNET — TATUM RPC ACTIVE</span>
+  </div>
+
+  <!-- Body -->
+  <div class="body">
+
+    <!-- Description -->
+    <div class="description">
+      Encrypt files locally with <strong style="color:#22d3ee">AES-256-GCM</strong>.
+      Store on <strong style="color:#818cf8">Walrus</strong> decentralized storage.
+      Let <strong style="color:#34d399">Sui smart contracts</strong> release your secrets when time is right.
+    </div>
+
+    <!-- Feature pills -->
+    <div class="features">
+      <span class="pill pill-cyan">● Client-Side AES-256</span>
+      <span class="pill pill-indigo">● Walrus Storage</span>
+      <span class="pill pill-green">● Sui VM</span>
+      <span class="pill pill-amber">● Dead Man's Switch</span>
+    </div>
+
+    <!-- Main CTA -->
+    <button class="btn-primary" id="btn-open">
+      <span class="icon">🚀</span>
+      <span>Open ChainCapsule App</span>
+    </button>
+
+    <!-- Quick nav -->
+    <div class="quick-nav">
+      <button class="btn-nav" data-path="/create">
+        <span class="nav-icon">🔐</span> Deploy Capsule
+      </button>
+      <button class="btn-nav" data-path="/dashboard">
+        <span class="nav-icon">📡</span> Dashboard
+      </button>
+      <button class="btn-nav" data-path="/open">
+        <span class="nav-icon">🔓</span> Recover Asset
+      </button>
+      <button class="btn-nav" data-path="">
+        <span class="nav-icon">🧠</span> AI Oracle
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span class="network-badge">SUI TESTNET</span>
+    <a class="footer-link" id="link-github" href="#">GitHub ↗</a>
+    <a class="footer-link" id="link-vercel" href="#">Live App ↗</a>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
